@@ -15,17 +15,23 @@ public class Main {
             array[i] = place;
         }
 
-        int[] oppositeArray = new int[n];
-        int index = 0;
-        for (int i = array.length-1; i == 0; i--) {
-            oppositeArray[index] = array[i];
-            index++;
-        }
+
 
         System.out.print("L'array al contrario è: [ ");
+        int[] invertedArray = oppositeArray(array, n);
         for (int i = 0; i < n; i++)
-            System.out.print(oppositeArray[i] + " ");
+            System.out.print(invertedArray[i] + " ");
         System.out.print("]");
 
+    }
+
+    public static int[] oppositeArray(int[] a, int n){
+        int[] newArr = new int[n];
+        int index = 0;
+        for (int i = a.length-1; i >= 0; i--) {
+            newArr[index] = a[i];
+            index++;
+        }
+        return newArr;
     }
 }
