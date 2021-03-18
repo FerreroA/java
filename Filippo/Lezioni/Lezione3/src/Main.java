@@ -18,6 +18,14 @@ public class Main {
             e.printStackTrace();
         }
 
+        System.out.println(Compito.getNextID());
+        Compito esercizio1 = new Compito();
+        System.out.println(esercizio1);
+        System.out.println(Compito.getNextID());
+        Compito esercizio2 = new Compito();
+        System.out.println(esercizio2);
+        System.out.println(Compito.getNextID());
+
         Student gianni = new Student("Gianni", "Bianchi", Gender.M, 1);
         System.out.println(paolo);
         System.out.println(gianni);
