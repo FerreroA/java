@@ -47,4 +47,12 @@ public class Student implements StudentListener {
     public void onUpdateGrades(ArrayList<Integer> grades) {
 
     }
+
+    @Override
+    public void onUpdateFullName(String fullName) {
+        this.fullname = fullName;
+
+        if(listener != null)
+            listener.onUpdateFullName(this.fullname);
+    }
 }
