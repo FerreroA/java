@@ -12,9 +12,6 @@ public class StudentView extends JFrame implements StudentListener {
 
     private StudentListener studentListener;
 
-    private JTextField yearText;
-    private JTextField letterText;
-    private JTextField fullNameText;
     private JLabel yearLabel;
     private JLabel letterLabel;
     private JLabel fullnameLabel;
@@ -49,19 +46,22 @@ public class StudentView extends JFrame implements StudentListener {
         bottomCenterPane.setLayout(new FlowLayout());
         centerPane.add(bottomCenterPane);
 
+        JPanel dialogPane = new JPanel();
+
+
 
         // Create content
-        topPane.add(new JLabel("Year:"));
+        dialogPane.add(new JLabel("Year:"));
         yearLabel = new JLabel();
         topPane.add(yearLabel);
 
-        topPane.add(new JLabel("Class:"));
+        dialogPane.add(new JLabel("Class:"));
         letterLabel = new JLabel();
         topPane.add(letterLabel);
 
-        topPane.add(new Label("Year"));
+        dialogPane.add(new Label("Year"));
         yearText = new JTextField(5);
-        topPane.add(yearText);
+        dialogPane.add(yearText);
 
         topPane.add(new Label("Class"));
         letterText = new JTextField(5);
@@ -96,8 +96,13 @@ public class StudentView extends JFrame implements StudentListener {
 
 
 
+
+
         setVisible(true);
+
+        JOptionPane.showMessageDialog(null, dialogPane,"Set student data", JOptionPane.PLAIN_MESSAGE);
     }
+
 
     @Override
     public void onUpdateYear(int age) {
