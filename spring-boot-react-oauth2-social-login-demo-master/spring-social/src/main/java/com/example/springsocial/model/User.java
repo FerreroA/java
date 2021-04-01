@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import java.util.List;
+
+import static javax.persistence.CascadeType.ALL;
 
 @Entity
 @Table(name = "users", uniqueConstraints = {
@@ -34,6 +37,29 @@ public class User {
     private AuthProvider provider;
 
     private String providerId;
+
+    private String username;
+
+    private String bio;
+
+    @OneToMany(mappedBy = "owner", cascade = ALL)
+    private List<Photo> photos;
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public Long getId() {
         return id;
